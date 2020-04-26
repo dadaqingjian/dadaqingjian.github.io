@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-25T07:12:30.251Z</updated>
+  <updated>2020-04-26T12:43:02.826Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>google</title>
+    <link href="http://yoursite.com/2020/04/26/google/"/>
+    <id>http://yoursite.com/2020/04/26/google/</id>
+    <published>2020-04-26T12:43:02.825Z</published>
+    <updated>2020-04-26T12:43:02.826Z</updated>
+    
+    <content type="html"><![CDATA[google-site-verification: google012b9323b310b9ec.html]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        google-site-verification: google012b9323b310b9ec.html
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
