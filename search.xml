@@ -27,6 +27,7 @@
 <h3 id="情景与模式识别"><a href="#情景与模式识别" class="headerlink" title="情景与模式识别"></a>情景与模式识别</h3><p><font color='red'>知觉中的一个普遍问题是，这种自上而下加工(情景上下文)与不考虑整体情景而直接对信息本身进行的自下而上加工（样本本身的特征）是如何结合的？</font>比如在字母识别问题中，单词情景可以用来补充特征信息。最后，在马萨罗FLMP模型中指出，情景信息与刺激信息各自独立地提供信息，共同决定知觉到的模式。</p>
 ]]></content>
       <categories>
+        <category>书籍</category>
         <category>认知心理学</category>
       </categories>
   </entry>
