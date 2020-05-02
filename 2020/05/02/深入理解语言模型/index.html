@@ -107,7 +107,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://xiuyeliang.com/2020/05/02/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/media/NNLM%E6%A1%86%E6%9E%B6%E5%9B%BE.png">
 <meta property="article:published_time" content="2020-05-02T01:24:05.000Z">
-<meta property="article:modified_time" content="2020-05-02T03:00:25.042Z">
+<meta property="article:modified_time" content="2020-05-02T03:44:01.533Z">
 <meta property="article:author" content="Yeliang Xiu">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://xiuyeliang.com/2020/05/02/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/media/NNLM%E6%A1%86%E6%9E%B6%E5%9B%BE.png">
@@ -457,7 +457,7 @@
 <p>n=1 (unigram) $P\left(w_{1}, w_{2}, \ldots, w_{n}\right)=\prod_{i=1}^{n} P\left(w_{i}\right)$</p>
 <p>n=2 (bigram) $P\left(w_{1}, w_{2}, \dots, w_{n}\right)=\prod_{i=1} P\left(w_{i} | w_{i-1}\right)$</p>
 <p>n=3 (trigram) $P\left(w_{1}, w_{2}, \ldots, w_{n}\right)=\prod_{i=1}^{n} P\left(w_{i} | w_{i-2}, w_{i-1}\right)$</p>
-<p>其中，当n&gt;1时，为了使句首词的条件概率有意思，需要给原序列加上一个或多个启始符$<s>$。其作用是为了表征句首词出现的条件概率。</p>
+<p>其中，当n&gt;1时，为了使句首词的条件概率有意思，需要给原序列加上一个或多个启始符。其作用是为了表征句首词出现的条件概率。</p>
 <h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><ul>
 <li>当不加结束符时，n-gram语言模型只能分别对所有固定长度的序列进行概率分布建模，而不是任意长度的序列。</li>
 <li>出现这个现象的原因在于，上述极大似然估计的第二个等式只有在序列包含结束符的时候才成立。</li>
