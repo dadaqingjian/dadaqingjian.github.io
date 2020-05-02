@@ -98,17 +98,19 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="1. 语言模型定义对于语言序列$(W_1,W_2,W_3,…,W_i) $语言模型就是计算该序列的概率。通俗理解：即判断一个语言序列是否是正常语句，即是否是人话$ P(I Love  U)&gt; P(Love I U)$. 2. 统计语言模型2.1 n-gram语言模型的基本知识首先，由链式法则可以的得到，$ P(w_1,w_2,…,w_n)&#x3D;P(w_1)P(w_2|w_1)…P(w_n|w_1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://xiuyeliang.com/2020/04/25/hello-world/index.html">
+<meta property="og:title" content="深入理解语言模型">
+<meta property="og:url" content="http://xiuyeliang.com/2020/05/02/%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/index.html">
 <meta property="og:site_name" content="Yeliang Xiu&#39;Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="1. 语言模型定义对于语言序列$(W_1,W_2,W_3,…,W_i) $语言模型就是计算该序列的概率。通俗理解：即判断一个语言序列是否是正常语句，即是否是人话$ P(I Love  U)&gt; P(Love I U)$. 2. 统计语言模型2.1 n-gram语言模型的基本知识首先，由链式法则可以的得到，$ P(w_1,w_2,…,w_n)&#x3D;P(w_1)P(w_2|w_1)…P(w_n|w_1">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-04-25T07:12:30.251Z">
-<meta property="article:modified_time" content="2020-04-25T07:12:30.251Z">
+<meta property="og:image" content="http://xiuyeliang.com/2020/05/02/%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/NNLM%E6%A1%86%E6%9E%B6%E5%9B%BE.png">
+<meta property="article:published_time" content="2020-05-02T01:24:05.000Z">
+<meta property="article:modified_time" content="2020-05-02T05:16:48.402Z">
 <meta property="article:author" content="Yeliang Xiu">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://xiuyeliang.com/2020/05/02/%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/NNLM%E6%A1%86%E6%9E%B6%E5%9B%BE.png">
 
 
 
@@ -138,13 +140,13 @@
 
 
 
-  <link rel="canonical" href="http://xiuyeliang.com/2020/04/25/hello-world/"/>
+  <link rel="canonical" href="http://xiuyeliang.com/2020/05/02/语言模型/"/>
 
 
 
 
 
-  <title>Hello World | Yeliang Xiu'Blog</title>
+  <title>深入理解语言模型 | Yeliang Xiu'Blog</title>
   
 
 
@@ -317,7 +319,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xiuyeliang.com/2020/04/25/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://xiuyeliang.com/2020/05/02/%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yeliang Xiu">
@@ -334,7 +336,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">深入理解语言模型</h1>
         
 
         <div class="post-meta">
@@ -346,8 +348,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-25T15:12:30+08:00">
-                2020-04-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-02T09:24:05+08:00">
+                2020-05-02
               </time>
             
 
@@ -356,6 +358,39 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/" itemprop="url" rel="index">
+                    <span itemprop="name">自然语言处理</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">深入理解语言模型</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -379,7 +414,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  73
+                  1.5k
                 </span>
               
 
@@ -395,7 +430,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  6
                 </span>
               
             </div>
@@ -416,19 +451,58 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h2 id="1-语言模型定义"><a href="#1-语言模型定义" class="headerlink" title="1. 语言模型定义"></a>1. 语言模型定义</h2><p>对于语言序列$(W_1,W_2,W_3,…,W_i) $语言模型就是计算该序列的概率。通俗理解：即判断一个语言序列是否是正常语句，即是否是人话$ P(I Love  U)&gt; P(Love I U)$.</p>
+<h2 id="2-统计语言模型"><a href="#2-统计语言模型" class="headerlink" title="2. 统计语言模型"></a>2. 统计语言模型</h2><h3 id="2-1-n-gram语言模型的基本知识"><a href="#2-1-n-gram语言模型的基本知识" class="headerlink" title="2.1 n-gram语言模型的基本知识"></a>2.1 n-gram语言模型的基本知识</h3><p>首先，由链式法则可以的得到，$ P(w_1,w_2,…,w_n)=P(w_1)P(w_2|w_1)…P(w_n|w_1,..,w_{n-1})$<br>在统计语言模型中，采用极大似然估计来计算每个词出现的条件概率，即<br>$\begin{aligned} P\left(w_{i} | w_{1}, \ldots, w_{i-1}\right) &amp;=\frac{C\left(w_{1}, w_{2}, \ldots, w_{i}\right)}{\sum_{w} C\left(w_{1}, w_{2}, \ldots w_{i-1}, w\right)} \ &amp; \stackrel{?}{=} \frac{C\left(w_{1}, w_{2}, \ldots, w_{i}\right)}{C\left(w_{1}, w_{2}, \ldots w_{i-1}\right)} \end{aligned}$<br>其中，$C(.)$表示子序列在训练集中出现的次数。但是对于任意长的自然语言语句，根据极大似然估计直接计算$P\left(w_{i} | w_{1}, \ldots, w_{i-1}\right)$显然不现实。<br>为了解决这个问题，引入了<strong>马尔可夫假设（Markov assumption）</strong>,即假设当前词出现的概率只依赖于前n-1个词，可以得到：<br>$P\left(w_{i} | w_{1}, w_{2}, \dots, w_{i-1}\right)=P\left(w_{i} | w_{i-n+1}, \dots, w_{i-1}\right)$</p>
+<p>基于上式，定义<strong>n-gram</strong> 语言模型如下：</p>
+<p>n=1 (unigram) $P\left(w_{1}, w_{2}, \ldots, w_{n}\right)=\prod_{i=1}^{n} P\left(w_{i}\right)$</p>
+<p>n=2 (bigram) $P\left(w_{1}, w_{2}, \dots, w_{n}\right)=\prod_{i=1} P\left(w_{i} | w_{i-1}\right)$</p>
+<p>n=3 (trigram) $P\left(w_{1}, w_{2}, \ldots, w_{n}\right)=\prod_{i=1}^{n} P\left(w_{i} | w_{i-2}, w_{i-1}\right)$</p>
+<p>其中，当n&gt;1时，为了使句首词的条件概率有意思，需要给原序列加上一个或多个启始符。其作用是为了表征句首词出现的条件概率。</p>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><ul>
+<li>当不加结束符时，n-gram语言模型只能分别对所有固定长度的序列进行概率分布建模，而不是任意长度的序列。</li>
+<li>出现这个现象的原因在于，上述极大似然估计的第二个等式只有在序列包含结束符的时候才成立。</li>
+</ul>
+<h3 id="2-2-n-gram语言中的平滑技术"><a href="#2-2-n-gram语言中的平滑技术" class="headerlink" title="2.2 n-gram语言中的平滑技术"></a>2.2 n-gram语言中的平滑技术</h3><ul>
+<li>Add-one Smoothing(Laplace Smoothing)</li>
+</ul>
+<ul>
+<li><p>Add-K Smoothing</p>
+</li>
+<li><p>Interpolation 核心思路：在计算tri-gram的时候同时考虑Uni-gram,bi-gram,tri-gram出现的频率。</p>
+</li>
+<li><p>Good-Turing Smoothing</p>
+</li>
+</ul>
+<h3 id="n-gram语言模型小结"><a href="#n-gram语言模型小结" class="headerlink" title="n-gram语言模型小结"></a>n-gram语言模型小结</h3><p>优点：</p>
+<ol>
+<li>采样极大似然估计，参数易训练；</li>
+<li>完全包含了q前n-1个词的全部信息；</li>
+<li>解释性强，直观易理解。<br>缺点</li>
+<li>缺乏啊长期依赖，只能建模到前n-1个词。</li>
+<li>随着n的增大，参数空间呈指数增长</li>
+<li>数据稀疏，难免会出现OOV的问题</li>
+<li>单纯的基于统计频次，泛化能力差。</li>
+</ol>
+<h2 id="3-神经网络语言模型"><a href="#3-神经网络语言模型" class="headerlink" title="3. 神经网络语言模型"></a>3. 神经网络语言模型</h2><p>神经网络语言模型可以看作是在给定一个序列的前提下，预测下一个词出现的概率，$P\left(w_{i} | w_{1}, \dots, w_{i-1}\right)$，不论n-gram中的n怎么取都是对上式的近似。</p>
+<h3 id="3-1-基于前馈神经网络的语言模型"><a href="#3-1-基于前馈神经网络的语言模型" class="headerlink" title="3.1 基于前馈神经网络的语言模型"></a>3.1 基于前馈神经网络的语言模型</h3><p>Bengio[2]在这篇文中提出了如下的前馈神经网络结构（NNLM）。与传统的估计$P\left(w_{i} | w_{1}, \dots, w_{i-1}\right)$不同，NNLM模型直接通过神经网络结构对n元条件概率进行建模，NNLM结构如下。</p>
+<p><img src="/2020/05/02/%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/NNLM%E6%A1%86%E6%9E%B6%E5%9B%BE.png" alt="NNLM框架图"></p>
+<h4 id="3-1-1模型输入"><a href="#3-1-1模型输入" class="headerlink" title="3.1.1模型输入"></a>3.1.1模型输入</h4><p>每次从语料库中滑动4个数据形成一个样本，将其中三个词转为one-hot编码形式，将三个one-hot形式作为输入喂入网络。这里用V表示所有单词的集合（即词典），$V_i$表示词典中的第i个单词。</p>
+<h4 id="3-1-2-模型参数"><a href="#3-1-2-模型参数" class="headerlink" title="3.1.2 模型参数"></a>3.1.2 模型参数</h4><p>NNLM的目标是训练如下模型：<br>$f\left(w_{t}, w_{t-1}, \ldots, w_{t-n+2}, w_{t-n+1}\right)=p\left(w_{t} | w_{1}^{t-1}\right)$<br>其中$W_i$ 表示词序列中第t个单词，$w^{t-1}_{1}$表示从第一个词到第t个词组成的子序列。模型需要满足的约束是：</p>
+<ul>
+<li>概率大于0  $f\left(w_{t}, w_{t-1}, \ldots, w_{t-n+2}, w_{t-n+1}\right)&gt;0$</li>
+<li>模型输出的一个向量，该向量的每一个分量依次对应下一个词为词典中某个词的概率。所以｜V｜中一定有一个最大的概率。 $\sum_{i}^{|V|} f\left(w_{t}, w_{t-1}, \dots, w_{t-n+2}, w_{t-n+1}\right)=1$</li>
+</ul>
+<p>模型的传播过程可以分为二部分：特征映射和计算条件概率二部分。</p>
+<ol>
+<li>特征映射： 通过映射矩阵 $C \in R^{|V| \times m}$ 将输入的每一个词映射为一个特征向量，$C(i) \in R^{m}$ 表示词典中第i个词对应的特征向量，其中m表示特征向量的维度。然后将通过特征映射得到 $C\left(w_{t-n+1}\right), \dots, C\left(w_{t-1}\right)$ 合并成一个(n-1)m维的向量 $\left(C\left(w_{t-n+1}\right), \dots, C\left(w_{t-1}\right)\right)$ ，因为每一个词是m维，总共有n-1个词，所以共有(n-1)m维。</li>
+<li>计算条件概率分布：通过一个函数g(g是前馈或者递归神经网络)将输入的词向量序列 $\left(C\left(w_{t-n+1}\right), \dots, C\left(w_{t-1}\right)\right)$ 转化成一个概率分布 $y \in R^{|V|}$ ，这里的输出是|V|维的，和词典的维度是相同的。</li>
+</ol>
+<h4 id="3-1-3-总结"><a href="#3-1-3-总结" class="headerlink" title="3.1.3 总结"></a>3.1.3 总结</h4><p>NNLM模型使用了低维紧凑的词向量对上文进行表示，这解决了词袋模型带来的数据稀疏，语义鸿沟等问题。并且在相似的上下文语境中，NNLM模型可以预测出相似的目标词，而传统模型无法做到这一点。</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li><a href="https://mp.weixin.qq.com/s/yQbcQJpFiniZYuulsHVv2Q" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/yQbcQJpFiniZYuulsHVv2Q</a></li>
+<li><a href="http://jmlr.org/papers/volume3/bengio03a/bengio03a.pdf" target="_blank" rel="noopener">http://jmlr.org/papers/volume3/bengio03a/bengio03a.pdf</a></li>
+<li><a href="https://blog.csdn.net/lilong117194/article/details/82018008?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1" target="_blank" rel="noopener">https://blog.csdn.net/lilong117194/article/details/82018008?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1</a></li>
+</ol>
 
       
     </div>
@@ -449,7 +523,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="http://xiuyeliang.com/2020/04/25/hello-world/" title="Hello World">http://xiuyeliang.com/2020/04/25/hello-world/</a>
+    <a href="http://xiuyeliang.com/2020/05/02/%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/" title="深入理解语言模型">http://xiuyeliang.com/2020/05/02/%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -471,15 +545,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2020/04/30/%E7%9F%A5%E8%A7%89/" rel="next" title="认知心理学-第二章《知觉》概要">
+                <i class="fa fa-chevron-left"></i> 认知心理学-第二章《知觉》概要
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/04/30/%E7%9F%A5%E8%A7%89/" rel="prev" title="认知心理学-第二章《知觉》概要">
-                认知心理学-第二章《知觉》概要 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -560,7 +634,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -629,7 +703,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-语言模型定义"><span class="nav-text">1. 语言模型定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-统计语言模型"><span class="nav-text">2. 统计语言模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-n-gram语言模型的基本知识"><span class="nav-text">2.1 n-gram语言模型的基本知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结论"><span class="nav-text">结论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-n-gram语言中的平滑技术"><span class="nav-text">2.2 n-gram语言中的平滑技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#n-gram语言模型小结"><span class="nav-text">n-gram语言模型小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-神经网络语言模型"><span class="nav-text">3. 神经网络语言模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-基于前馈神经网络的语言模型"><span class="nav-text">3.1 基于前馈神经网络的语言模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-1模型输入"><span class="nav-text">3.1.1模型输入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-2-模型参数"><span class="nav-text">3.1.2 模型参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-3-总结"><span class="nav-text">3.1.3 总结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>
