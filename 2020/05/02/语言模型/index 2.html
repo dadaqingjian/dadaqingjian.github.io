@@ -107,7 +107,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://xiuyeliang.com/2020/05/02/%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/NNLM%E6%A1%86%E6%9E%B6%E5%9B%BE.png">
 <meta property="article:published_time" content="2020-05-02T01:24:05.000Z">
-<meta property="article:modified_time" content="2020-05-02T07:23:58.813Z">
+<meta property="article:modified_time" content="2020-05-02T04:45:04.684Z">
 <meta property="article:author" content="Yeliang Xiu">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://xiuyeliang.com/2020/05/02/%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/NNLM%E6%A1%86%E6%9E%B6%E5%9B%BE.png">
@@ -414,7 +414,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.5k
+                  895
                 </span>
               
 
@@ -430,7 +430,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  6
+                  3
                 </span>
               
             </div>
@@ -473,7 +473,7 @@
 <li><p>Good-Turing Smoothing</p>
 </li>
 </ul>
-<h3 id="2-3-n-gram语言模型小结"><a href="#2-3-n-gram语言模型小结" class="headerlink" title="2.3 n-gram语言模型小结"></a>2.3 n-gram语言模型小结</h3><p>优点：</p>
+<h3 id="n-gram语言模型小结"><a href="#n-gram语言模型小结" class="headerlink" title="n-gram语言模型小结"></a>n-gram语言模型小结</h3><p>优点：</p>
 <ol>
 <li>采样极大似然估计，参数易训练；</li>
 <li>完全包含了q前n-1个词的全部信息；</li>
@@ -483,25 +483,12 @@
 <li>数据稀疏，难免会出现OOV的问题</li>
 <li>单纯的基于统计频次，泛化能力差。</li>
 </ol>
-<h2 id="3-神经网络语言模型"><a href="#3-神经网络语言模型" class="headerlink" title="3. 神经网络语言模型"></a>3. 神经网络语言模型</h2><p>神经网络语言模型可以看作是在给定一个序列的前提下，预测下一个词出现的概率，$P\left(w_{i} | w_{1}, \dots, w_{i-1}\right)$，不论n-gram中的n怎么取都是对上式的近似。</p>
-<h3 id="3-1-基于前馈神经网络的语言模型"><a href="#3-1-基于前馈神经网络的语言模型" class="headerlink" title="3.1 基于前馈神经网络的语言模型"></a>3.1 基于前馈神经网络的语言模型</h3><p>Bengio[2]在这篇文中提出了如下的前馈神经网络结构（NNLM）。与传统的估计$P\left(w_{i} | w_{1}, \dots, w_{i-1}\right)$不同，NNLM模型直接通过神经网络结构对n元条件概率进行建模，NNLM结构如下。</p>
+<h2 id="神经网络语言模型"><a href="#神经网络语言模型" class="headerlink" title="神经网络语言模型"></a>神经网络语言模型</h2><p>神经网络语言模型可以看作是在给定一个序列的前提下，预测下一个词出现的概率，$P\left(w_{i} | w_{1}, \dots, w_{i-1}\right)$，不论n-gram中的n怎么取都是对上式的近似。</p>
+<h3 id="基于前馈神经网络的语言模型"><a href="#基于前馈神经网络的语言模型" class="headerlink" title="基于前馈神经网络的语言模型"></a>基于前馈神经网络的语言模型</h3><p>Bengio[2]在这篇文中提出了如下的前馈神经网络结构（NNLM）。与传统的估计$P\left(w_{i} | w_{1}, \dots, w_{i-1}\right)$不同，NNLM模型直接通过神经网络结构对n元条件概率进行建模，NNLM结构如下。</p>
 <p><img src="/2020/05/02/%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/NNLM%E6%A1%86%E6%9E%B6%E5%9B%BE.png" alt="NNLM框架图"></p>
-<h4 id="3-1-1模型输入"><a href="#3-1-1模型输入" class="headerlink" title="3.1.1模型输入"></a>3.1.1模型输入</h4><p>每次从语料库中滑动4个数据形成一个样本，将其中三个词转为one-hot编码形式，将三个one-hot形式作为输入喂入网络。这里用V表示所有单词的集合（即词典），$V_i$表示词典中的第i个单词。</p>
-<h4 id="3-1-2-模型参数"><a href="#3-1-2-模型参数" class="headerlink" title="3.1.2 模型参数"></a>3.1.2 模型参数</h4><p>NNLM的目标是训练如下模型：<br>$f\left(w_{t}, w_{t-1}, \ldots, w_{t-n+2}, w_{t-n+1}\right)=p\left(w_{t} | w_{1}^{t-1}\right)$<br>其中$W_i$ 表示词序列中第t个单词，$w^{t-1}_{1}$表示从第一个词到第t个词组成的子序列。模型需要满足的约束是：</p>
-<ul>
-<li>概率大于0  $f\left(w_{t}, w_{t-1}, \ldots, w_{t-n+2}, w_{t-n+1}\right)&gt;0$</li>
-<li>模型输出的一个向量，该向量的每一个分量依次对应下一个词为词典中某个词的概率。所以｜V｜中一定有一个最大的概率。 $\sum_{i}^{|V|} f\left(w_{t}, w_{t-1}, \dots, w_{t-n+2}, w_{t-n+1}\right)=1$</li>
-</ul>
-<p>模型的传播过程可以分为二部分：特征映射和计算条件概率二部分。</p>
-<ol>
-<li>特征映射： 通过映射矩阵 $C \in R^{|V| \times m}$ 将输入的每一个词映射为一个特征向量，$C(i) \in R^{m}$ 表示词典中第i个词对应的特征向量，其中m表示特征向量的维度。然后将通过特征映射得到 $C\left(w_{t-n+1}\right), \dots, C\left(w_{t-1}\right)$ 合并成一个(n-1)m维的向量 $\left(C\left(w_{t-n+1}\right), \dots, C\left(w_{t-1}\right)\right)$ ，因为每一个词是m维，总共有n-1个词，所以共有(n-1)m维。</li>
-<li>计算条件概率分布：通过一个函数g(g是前馈或者递归神经网络)将输入的词向量序列 $\left(C\left(w_{t-n+1}\right), \dots, C\left(w_{t-1}\right)\right)$ 转化成一个概率分布 $y \in R^{|V|}$ ，这里的输出是|V|维的，和词典的维度是相同的。</li>
-</ol>
-<h4 id="3-1-3-总结"><a href="#3-1-3-总结" class="headerlink" title="3.1.3 总结"></a>3.1.3 总结</h4><p>NNLM模型使用了低维紧凑的词向量对上文进行表示，这解决了词袋模型带来的数据稀疏，语义鸿沟等问题。并且在相似的上下文语境中，NNLM模型可以预测出相似的目标词，而传统模型无法做到这一点。</p>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
 <li><a href="https://mp.weixin.qq.com/s/yQbcQJpFiniZYuulsHVv2Q" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/yQbcQJpFiniZYuulsHVv2Q</a></li>
 <li><a href="http://jmlr.org/papers/volume3/bengio03a/bengio03a.pdf" target="_blank" rel="noopener">http://jmlr.org/papers/volume3/bengio03a/bengio03a.pdf</a></li>
-<li><a href="https://blog.csdn.net/lilong117194/article/details/82018008?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1" target="_blank" rel="noopener">https://blog.csdn.net/lilong117194/article/details/82018008?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1</a></li>
 </ol>
 
       
@@ -703,7 +690,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-语言模型定义"><span class="nav-text">1. 语言模型定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-统计语言模型"><span class="nav-text">2. 统计语言模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-n-gram语言模型的基本知识"><span class="nav-text">2.1 n-gram语言模型的基本知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结论"><span class="nav-text">结论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-n-gram语言中的平滑技术"><span class="nav-text">2.2 n-gram语言中的平滑技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-n-gram语言模型小结"><span class="nav-text">2.3 n-gram语言模型小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-神经网络语言模型"><span class="nav-text">3. 神经网络语言模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-基于前馈神经网络的语言模型"><span class="nav-text">3.1 基于前馈神经网络的语言模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-1模型输入"><span class="nav-text">3.1.1模型输入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-2-模型参数"><span class="nav-text">3.1.2 模型参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-3-总结"><span class="nav-text">3.1.3 总结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-text">Reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-语言模型定义"><span class="nav-text">1. 语言模型定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-统计语言模型"><span class="nav-text">2. 统计语言模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-n-gram语言模型的基本知识"><span class="nav-text">2.1 n-gram语言模型的基本知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结论"><span class="nav-text">结论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-n-gram语言中的平滑技术"><span class="nav-text">2.2 n-gram语言中的平滑技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#n-gram语言模型小结"><span class="nav-text">n-gram语言模型小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#神经网络语言模型"><span class="nav-text">神经网络语言模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于前馈神经网络的语言模型"><span class="nav-text">基于前馈神经网络的语言模型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>

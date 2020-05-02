@@ -38,7 +38,7 @@
 <li><p>Good-Turing Smoothing</p>
 </li>
 </ul>
-<h3 id="n-gram语言模型小结"><a href="#n-gram语言模型小结" class="headerlink" title="n-gram语言模型小结"></a>n-gram语言模型小结</h3><p>优点：</p>
+<h3 id="2-3-n-gram语言模型小结"><a href="#2-3-n-gram语言模型小结" class="headerlink" title="2.3 n-gram语言模型小结"></a>2.3 n-gram语言模型小结</h3><p>优点：</p>
 <ol>
 <li>采样极大似然估计，参数易训练；</li>
 <li>完全包含了q前n-1个词的全部信息；</li>
