@@ -32,6 +32,19 @@
       </categories>
   </entry>
   <entry>
+    <title>认知心理学-第二章《知觉》概要</title>
+    <url>/2020/04/30/%E7%9F%A5%E8%A7%89/</url>
+    <content><![CDATA[<h2 id="视觉模式识别"><a href="#视觉模式识别" class="headerlink" title="视觉模式识别"></a>视觉模式识别</h2><h3 id="模板匹配模型"><a href="#模板匹配模型" class="headerlink" title="模板匹配模型"></a>模板匹配模型</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">模板匹配是通过将刺激（样本特征）与模板进行匹配来识别物体的一种方法。但是一旦对原始样本进行扰动的话，则匹配效果就很差。</span><br></pre></td></tr></table></figure>
+<h3 id="特征分析"><a href="#特征分析" class="headerlink" title="特征分析"></a>特征分析</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">特征分析首先识别构成模式（样本）的各个特征，然后将其进行组合。</span><br></pre></td></tr></table></figure>
+<h2 id="言语识别"><a href="#言语识别" class="headerlink" title="言语识别"></a>言语识别</h2><h3 id="言语的特征分析"><a href="#言语的特征分析" class="headerlink" title="言语的特征分析"></a>言语的特征分析</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">以音素为例，音素识别的依据是音素产生过程中的特征，例如发音部位和浊音音质。</span><br></pre></td></tr></table></figure>
+<h3 id="情景与模式识别"><a href="#情景与模式识别" class="headerlink" title="情景与模式识别"></a>情景与模式识别</h3><p><font color="red">知觉中的一个普遍问题是，这种自上而下加工(情景上下文)与不考虑整体情景而直接对信息本身进行的自下而上加工（样本本身的特征）是如何结合的？</font>比如在字母识别问题中，单词情景可以用来补充特征信息。最后，在马萨罗FLMP模型中指出，情景信息与刺激信息各自独立地提供信息，共同决定知觉到的模式。</p>
+]]></content>
+      <categories>
+        <category>书籍</category>
+        <category>认知心理学</category>
+      </categories>
+  </entry>
+  <entry>
     <title>维特比(Viterbi)算法及python实现</title>
     <url>/2020/05/03/%E7%BB%B4%E7%89%B9%E6%AF%94%E7%AE%97%E6%B3%95%E5%8F%8A%E5%AE%9E%E7%8E%B0/</url>
     <content><![CDATA[<h2 id="1-维特比算法"><a href="#1-维特比算法" class="headerlink" title="1. 维特比算法"></a>1. 维特比算法</h2><p>维特比算法是一种<strong>动态规划</strong>苏算法，可用于最可能产生观测时间序列的-维特比路径-隐含状态序列，特别是在马尔可夫信息源上下文和隐马尔可夫模型中。</p>
@@ -119,16 +132,29 @@
       </categories>
   </entry>
   <entry>
-    <title>认知心理学-第二章《知觉》概要</title>
-    <url>/2020/04/30/%E7%9F%A5%E8%A7%89/</url>
-    <content><![CDATA[<h2 id="视觉模式识别"><a href="#视觉模式识别" class="headerlink" title="视觉模式识别"></a>视觉模式识别</h2><h3 id="模板匹配模型"><a href="#模板匹配模型" class="headerlink" title="模板匹配模型"></a>模板匹配模型</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">模板匹配是通过将刺激（样本特征）与模板进行匹配来识别物体的一种方法。但是一旦对原始样本进行扰动的话，则匹配效果就很差。</span><br></pre></td></tr></table></figure>
-<h3 id="特征分析"><a href="#特征分析" class="headerlink" title="特征分析"></a>特征分析</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">特征分析首先识别构成模式（样本）的各个特征，然后将其进行组合。</span><br></pre></td></tr></table></figure>
-<h2 id="言语识别"><a href="#言语识别" class="headerlink" title="言语识别"></a>言语识别</h2><h3 id="言语的特征分析"><a href="#言语的特征分析" class="headerlink" title="言语的特征分析"></a>言语的特征分析</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">以音素为例，音素识别的依据是音素产生过程中的特征，例如发音部位和浊音音质。</span><br></pre></td></tr></table></figure>
-<h3 id="情景与模式识别"><a href="#情景与模式识别" class="headerlink" title="情景与模式识别"></a>情景与模式识别</h3><p><font color="red">知觉中的一个普遍问题是，这种自上而下加工(情景上下文)与不考虑整体情景而直接对信息本身进行的自下而上加工（样本本身的特征）是如何结合的？</font>比如在字母识别问题中，单词情景可以用来补充特征信息。最后，在马萨罗FLMP模型中指出，情景信息与刺激信息各自独立地提供信息，共同决定知觉到的模式。</p>
+    <title>隐马尔可夫模型</title>
+    <url>/2020/05/03/%E9%9A%90%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E6%A8%A1%E5%9E%8B%E2%80%98/</url>
+    <content><![CDATA[<h2 id="1-马尔科夫过程"><a href="#1-马尔科夫过程" class="headerlink" title="1. 马尔科夫过程"></a>1. 马尔科夫过程</h2><p>在已知的目前状态条件下，它未来的演变不依赖于它以往的演变。马尔科夫过程包括一个初始向量和一个状态转移矩阵。</p>
+<h2 id="2-马尔科夫链"><a href="#2-马尔科夫链" class="headerlink" title="2. 马尔科夫链"></a>2. 马尔科夫链</h2><p>时间和状态都是离散的马尔科夫过程称为马尔科夫链。</p>
+<h2 id="3-隐马尔可夫模型"><a href="#3-隐马尔可夫模型" class="headerlink" title="3. 隐马尔可夫模型"></a>3. 隐马尔可夫模型</h2><h3 id="3-1-概述"><a href="#3-1-概述" class="headerlink" title="3.1 概述"></a>3.1 概述</h3><p>在某些情况下马尔科夫过程不足以描述我们希望发现的模式。譬如，一个隐居的人可能不能直观的观察到天气的情况，但是有一些海藻。民间的传说告诉我们海藻的状态在某种概率上是和天气的情况相关的。在这种情况下我们有两个状态集合，一个可以观察到的状态集合（海藻的状态）和一个隐藏的状态（天气的状况）。我们希望能找到一个算法可以根据海藻的状况和马尔科夫假设来预测天气的状况。</p>
+<p>其中，隐藏状态的数目和可以观察到的状态的数目可能是不一样的。在语音识别中，一个简单的发言也许只需要80个语素来描述，但是一个内部的发音机制可以产生不到80或者超过80种不同的声音。同理，在一个有三种状态的天气系统（sunny、cloudy、rainy）中，也许可以观察到四种潮湿程度的海藻（dry、dryish、damp、soggy）。在此情况下，可以观察到的状态序列和隐藏的状态序列是概率相关的。于是我们可以将这种类型的过程建模为一个隐藏的马尔科夫过程和一个和这个马尔科夫过程概率相关的并且可以观察到的状态集合。</p>
+<h3 id="3-2-隐马尔科夫"><a href="#3-2-隐马尔科夫" class="headerlink" title="3.2 隐马尔科夫"></a>3.2 隐马尔科夫</h3><h4 id="3-2-1-隐马尔可夫模型表示"><a href="#3-2-1-隐马尔可夫模型表示" class="headerlink" title="3.2.1 隐马尔可夫模型表示"></a>3.2.1 隐马尔可夫模型表示</h4><p>HMM由隐含状态S,可观测状态O,初始状态概率矩阵pi,隐含状态概率转移矩阵A，可观测转移矩阵B（<strong>发射矩阵</strong>）组成。pi和A决定了状态序列，B决定了观测序列，因此，HMM可以由三元符号表示：<br>$\lambda=(A, B, \pi)$</p>
+<h4 id="3-2-2-HMM的二个性质"><a href="#3-2-2-HMM的二个性质" class="headerlink" title="3.2.2 HMM的二个性质"></a>3.2.2 HMM的二个性质</h4><ul>
+<li>齐次假设-假设t时刻与t-1之前的所有状态和观测是独立的。<br>$P\left(i_{t} | i_{t-1}, o_{t-1}, i_{t-2}, o_{t-2} \cdots i_{1}, o_{1}\right)=P\left(i_{t} | i_{t-1}\right)$</li>
+<li>观测独立性假设-t时刻的观测ot与t时刻之前的所有状态和观测是独立的。<br>$P\left(o_{t} | i_{T}, o_{T}, i_{T-1}, o_{T-1} \cdots i_{1}, o_{1}\right)=P\left(o_{t} | i_{t}\right)$<h4 id="HMM的三个问题"><a href="#HMM的三个问题" class="headerlink" title="HMM的三个问题"></a>HMM的三个问题</h4></li>
+</ul>
+<ol>
+<li>概率计算问题：给定模型 $\lambda=(A, B, \pi)$ 和观测序列 $O={O_1,O_2,O_3 \dots}$ ，计算在模型 $\lambda$ 下观测 $O$ 出现的概率 $P(O|\lambda)$ .（解决算法–&gt;前向-后向算法（动态规划））。</li>
+<li>学习问题：已知观测序列 $O={O_1,O_2,O_3 \dots}$ ，估计模型 $\lambda=(A, B, \pi)$ 的参数，使得在该参数下该模型的观测序列 $P(O|\lambda)$ 最大。（解决算法–Baum-Welch算法-EM算法）。</li>
+<li>预测问题（解码问题）：已知模型 $\lambda=(A, B, \pi)$ 和观测序列 $O={O_1,O_2,O_3 \dots}$ ，求给定观测序列条件概率 $P(I|O,\lambda)$ 最大的状态序列 $I$ 。</li>
+</ol>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li><a href="https://www.cnblogs.com/pinking/p/8531405.html" target="_blank" rel="noopener">https://www.cnblogs.com/pinking/p/8531405.html</a></li>
+</ol>
 ]]></content>
       <categories>
-        <category>书籍</category>
-        <category>认知心理学</category>
+        <category>机器学习</category>
+        <category>隐马尔可夫模型</category>
       </categories>
   </entry>
 </search>
