@@ -107,7 +107,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://xiuyeliang.com/2020/05/02/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%AE%80%E4%BB%8B/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%B5%81%E7%A8%8B%E5%9B%BE.png">
 <meta property="article:published_time" content="2020-05-02T10:11:31.000Z">
-<meta property="article:modified_time" content="2020-05-02T14:01:28.972Z">
+<meta property="article:modified_time" content="2020-05-02T14:07:52.073Z">
 <meta property="article:author" content="Yeliang Xiu">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://xiuyeliang.com/2020/05/02/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%AE%80%E4%BB%8B/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%B5%81%E7%A8%8B%E5%9B%BE.png">
@@ -414,7 +414,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  603
+                  583
                 </span>
               
 
@@ -455,10 +455,10 @@
 <h3 id="1-2-贝叶斯定理"><a href="#1-2-贝叶斯定理" class="headerlink" title="1.2 贝叶斯定理"></a>1.2 贝叶斯定理</h3><p>$P(B | A)=\frac{P(A | B) P(B)}{P(A)}$<br>贝叶斯定理之所以有用，是因为我们在生活中经常遇到这种情况，我们可以很容易直接得出 $P(A | B)$ ，$P(B | A)$则很难得出，但我们更关心 $P(B | A)$ ，则贝叶斯定理就为我们打通从$P(A | B)$ 到 $P(B | A)$ 的道路。</p>
 <h2 id="2-朴素贝叶斯分类"><a href="#2-朴素贝叶斯分类" class="headerlink" title="2. 朴素贝叶斯分类"></a>2. 朴素贝叶斯分类</h2><p>朴素贝叶斯的思想基础是：对于给出的待分类项，求解在此出现的条件下各个类别出现的概率，哪个最大，就认为此待分类项属于哪个类别。</p>
 <h3 id="2-1-朴素贝叶斯步骤"><a href="#2-1-朴素贝叶斯步骤" class="headerlink" title="2.1 朴素贝叶斯步骤"></a>2.1 朴素贝叶斯步骤</h3><ol>
-<li>设 $x=\left{a_{1}, a_{2}, \dots, a_{m}\right}$为一个待分类项，而每个a为x的一个特征属性。</li>
-<li>有类别集合 $C=\left{y_{1}, y_{2}, \dots, y_{n}\right}$ </li>
-<li>计算 $P\left(y_{1} | x\right), P\left(y_{2} | x\right), \dots, P\left(y_{n} | x\right)$ </li>
-<li>如果 $P\left(y_{k} | x\right)=\max \left{P\left(y_{1} | x\right), P\left(y_{2} | x\right), \dots, P\left(y_{n} | x\right)\right}$ ，则 $x \in y_{k}$。<br>那么关键是如何计算第3步中的各个条件概率。</li>
+<li>设 $x={a_{1}, a_{2}, \dots, a_{m}}$ 为一个待分类项，而每个a为x的一个特征属性。</li>
+<li>有类别集合 $C={y_{1}, y_{2}, \dots, y_{n}}$ </li>
+<li>计算 $P(y_{1} | x), P(y_{2} | x), \dots, P(y_{n} | x)$ </li>
+<li>如果 $P(y_{k} | x)=\max {P(y_{1} | x), P(y_{2} | x), \dots, P(y_{n} | x)}$ ，则 $x \in y_{k}$。<br>那么关键是如何计算第3步中的各个条件概率。</li>
 <li>找到一个已知分类的待分类项集合，这个集合叫做训练样本集</li>
 <li>统计得到在各类别下各个特征的条件概率估计，即：</li>
 </ol>
@@ -524,6 +524,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/05/03/%E7%BB%B4%E7%89%B9%E6%AF%94%E7%AE%97%E6%B3%95%E5%8F%8A%E5%AE%9E%E7%8E%B0/" rel="prev" title="维特比(Viterbi)算法及python实现">
+                维特比(Viterbi)算法及python实现 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -604,7 +608,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -615,7 +619,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
