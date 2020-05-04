@@ -98,16 +98,16 @@
 
 
 
-<meta name="description" content="1. 前言1.1 条件概率（conditional probability）$P(A | B)&#x3D;\frac{P(A B)}{P(B)}$ 1.2 贝叶斯定理$P(B | A)&#x3D;\frac{P(A | B) P(B)}{P(A)}$贝叶斯定理之所以有用，是因为我们在生活中经常遇到这种情况，我们可以很容易直接得出 $P(A | B)$ ，$P(B | A)$则很难得出，但我们更关心 $P(B | A)">
+<meta name="description" content="1. 前言1.1 条件概率（conditional probability）$P(A | B)&#x3D;\frac{P(A B)}{P(B)}$ 1.2 贝叶斯定理$P(Y | X)&#x3D;\frac{P(X | Y) P(Y)}{P(X)}$贝叶斯定理之所以有用，是因为我们在生活中经常遇到这种情况，我们可以很容易直接得出 $P(X | Y)$ ，$P(Y | X)$则很难得出，但我们更关心 $P(Y | X)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="朴素贝叶斯简介(Nave Bayes)">
 <meta property="og:url" content="http://xiuyeliang.com/2020/05/02/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%AE%80%E4%BB%8B/index.html">
 <meta property="og:site_name" content="Yeliang Xiu&#39;Blog">
-<meta property="og:description" content="1. 前言1.1 条件概率（conditional probability）$P(A | B)&#x3D;\frac{P(A B)}{P(B)}$ 1.2 贝叶斯定理$P(B | A)&#x3D;\frac{P(A | B) P(B)}{P(A)}$贝叶斯定理之所以有用，是因为我们在生活中经常遇到这种情况，我们可以很容易直接得出 $P(A | B)$ ，$P(B | A)$则很难得出，但我们更关心 $P(B | A)">
+<meta property="og:description" content="1. 前言1.1 条件概率（conditional probability）$P(A | B)&#x3D;\frac{P(A B)}{P(B)}$ 1.2 贝叶斯定理$P(Y | X)&#x3D;\frac{P(X | Y) P(Y)}{P(X)}$贝叶斯定理之所以有用，是因为我们在生活中经常遇到这种情况，我们可以很容易直接得出 $P(X | Y)$ ，$P(Y | X)$则很难得出，但我们更关心 $P(Y | X)">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://xiuyeliang.com/2020/05/02/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%AE%80%E4%BB%8B/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%B5%81%E7%A8%8B%E5%9B%BE.png">
 <meta property="article:published_time" content="2020-05-02T10:11:31.000Z">
-<meta property="article:modified_time" content="2020-05-02T14:07:52.073Z">
+<meta property="article:modified_time" content="2020-05-04T02:49:23.800Z">
 <meta property="article:author" content="Yeliang Xiu">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://xiuyeliang.com/2020/05/02/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%AE%80%E4%BB%8B/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%B5%81%E7%A8%8B%E5%9B%BE.png">
@@ -414,7 +414,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  583
+                  722
                 </span>
               
 
@@ -430,7 +430,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  2
+                  3
                 </span>
               
             </div>
@@ -452,8 +452,8 @@
 
       
         <h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><h3 id="1-1-条件概率（conditional-probability）"><a href="#1-1-条件概率（conditional-probability）" class="headerlink" title="1.1 条件概率（conditional probability）"></a>1.1 条件概率（conditional probability）</h3><p>$P(A | B)=\frac{P(A B)}{P(B)}$</p>
-<h3 id="1-2-贝叶斯定理"><a href="#1-2-贝叶斯定理" class="headerlink" title="1.2 贝叶斯定理"></a>1.2 贝叶斯定理</h3><p>$P(B | A)=\frac{P(A | B) P(B)}{P(A)}$<br>贝叶斯定理之所以有用，是因为我们在生活中经常遇到这种情况，我们可以很容易直接得出 $P(A | B)$ ，$P(B | A)$则很难得出，但我们更关心 $P(B | A)$ ，则贝叶斯定理就为我们打通从$P(A | B)$ 到 $P(B | A)$ 的道路。</p>
-<h2 id="2-朴素贝叶斯分类"><a href="#2-朴素贝叶斯分类" class="headerlink" title="2. 朴素贝叶斯分类"></a>2. 朴素贝叶斯分类</h2><p>朴素贝叶斯的思想基础是：对于给出的待分类项，求解在此出现的条件下各个类别出现的概率，哪个最大，就认为此待分类项属于哪个类别。</p>
+<h3 id="1-2-贝叶斯定理"><a href="#1-2-贝叶斯定理" class="headerlink" title="1.2 贝叶斯定理"></a>1.2 贝叶斯定理</h3><p>$P(Y | X)=\frac{P(X | Y) P(Y)}{P(X)}$<br>贝叶斯定理之所以有用，是因为我们在生活中经常遇到这种情况，我们可以很容易直接得出 $P(X | Y)$ ，$P(Y | X)$则很难得出，但我们更关心 $P(Y | X)$ ，则贝叶斯定理就为我们打通从$P(X | Y)$ 到 $P(Y | X)$ 的道路。</p>
+<h2 id="2-朴素贝叶斯分类"><a href="#2-朴素贝叶斯分类" class="headerlink" title="2. 朴素贝叶斯分类"></a>2. 朴素贝叶斯分类</h2><p>朴素贝叶斯的思想基础是：对于给出的待分类项，求解在此出现的条件下各个类别出现的概率，哪个最大，就认为此待分类项属于哪个类别。<br>朴素贝叶斯属于<strong>生成模型</strong>：生成式模型由数据学习联合分布 $P(X,Y)$ ,然后求出条件概率分布 $P(Y | X)$  作为预测模型。常见的生成模型有：朴素贝叶斯模型，隐马尔科夫模型，生成对抗网络，变分自动编码器。<br>注：<strong>判别模型</strong>：由判别方法学习到的模型称之为判别模型，判别方法是由数据直接学习决策函数或者条件概率分布 $P(Y | X)$ 作为预测的模型。</p>
 <h3 id="2-1-朴素贝叶斯步骤"><a href="#2-1-朴素贝叶斯步骤" class="headerlink" title="2.1 朴素贝叶斯步骤"></a>2.1 朴素贝叶斯步骤</h3><ol>
 <li>设 $x={a_{1}, a_{2}, \dots, a_{m}}$ 为一个待分类项，而每个a为x的一个特征属性。</li>
 <li>有类别集合 $C={y_{1}, y_{2}, \dots, y_{n}}$ </li>
