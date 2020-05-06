@@ -45,6 +45,16 @@
       </categories>
   </entry>
   <entry>
+    <title>知识图谱综述AAAI2020</title>
+    <url>/2020/05/06/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E7%BB%BC%E8%BF%B0ICLR2020/</url>
+    <content><![CDATA[<p><img src="/2020/05/06/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E7%BB%BC%E8%BF%B0ICLR2020/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E7%BB%BC%E8%BF%B0.png" alt="知识图谱综述"></p>
+]]></content>
+      <categories>
+        <category>论文阅读</category>
+        <category>自然语言处理-知识图谱</category>
+      </categories>
+  </entry>
+  <entry>
     <title>维特比(Viterbi)算法及python实现</title>
     <url>/2020/05/03/%E7%BB%B4%E7%89%B9%E6%AF%94%E7%AE%97%E6%B3%95%E5%8F%8A%E5%AE%9E%E7%8E%B0/</url>
     <content><![CDATA[<h2 id="1-维特比算法"><a href="#1-维特比算法" class="headerlink" title="1. 维特比算法"></a>1. 维特比算法</h2><p>维特比算法是一种<strong>动态规划</strong>苏算法，可用于最可能产生观测时间序列的-维特比路径-隐含状态序列，特别是在马尔可夫信息源上下文和隐马尔可夫模型中。</p>
