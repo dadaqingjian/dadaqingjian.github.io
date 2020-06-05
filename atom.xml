@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiuyeliang.com/"/>
-  <updated>2020-06-05T07:10:23.003Z</updated>
+  <updated>2020-06-05T07:13:18.094Z</updated>
   <id>http://xiuyeliang.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://xiuyeliang.com/2020/06/05/HEDGE/"/>
     <id>http://xiuyeliang.com/2020/06/05/HEDGE/</id>
     <published>2020-06-05T07:08:10.000Z</published>
-    <updated>2020-06-05T07:10:23.003Z</updated>
+    <updated>2020-06-05T07:13:18.094Z</updated>
     
     <content type="html"><![CDATA[<div class="row">    <embed src="./HEDGE.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
     
@@ -41,6 +41,10 @@
     
     </summary>
     
+    
+      <category term="论文阅读" scheme="http://xiuyeliang.com/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
+    
+      <category term="自然语言处理" scheme="http://xiuyeliang.com/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/"/>
     
     
   </entry>
