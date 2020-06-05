@@ -3,7 +3,11 @@
   <entry>
     <title>阅读《A Survey on Knowledge Graphs-Representation, Acquisition and Applications》-AAAI2020</title>
     <url>/2020/05/06/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E7%BB%BC%E8%BF%B0ICLR2020/</url>
-    <content><![CDATA[<p><img src="/2020/05/06/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E7%BB%BC%E8%BF%B0ICLR2020/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E7%BB%BC%E8%BF%B0.png" alt="知识图谱综述"></p>
+    <content><![CDATA[<h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><p>该综述主要从4个方面对知识图谱相关信息进行总结。</p>
+<ol>
+<li>知识图谱表示-主要是对图中的实体和关系用低维向量表示。</li>
+</ol>
+<p><img src="/2020/05/06/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E7%BB%BC%E8%BF%B0ICLR2020/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E7%BB%BC%E8%BF%B0.png" alt="知识图谱综述"></p>
 ]]></content>
       <categories>
         <category>论文阅读</category>
@@ -195,11 +199,24 @@
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
 <li><a href="https://blog.csdn.net/jiaoyangwm/article/details/81139362" target="_blank" rel="noopener">https://blog.csdn.net/jiaoyangwm/article/details/81139362</a></li>
 <li><a href="https://blog.csdn.net/ddydavie/article/details/82668141" target="_blank" rel="noopener">https://blog.csdn.net/ddydavie/article/details/82668141</a></li>
+<li><a href="https://blog.csdn.net/u012421852/article/details/79575720" target="_blank" rel="noopener">https://blog.csdn.net/u012421852/article/details/79575720</a></li>
 </ol>
 ]]></content>
       <categories>
         <category>机器学习</category>
         <category>线性回归与逻辑回归</category>
       </categories>
+  </entry>
+  <entry>
+    <title>HEDGE</title>
+    <url>/2020/06/05/HEDGE/</url>
+    <content><![CDATA[
+
+	<div class="row">
+    <embed src="./HEDGE.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+]]></content>
   </entry>
 </search>

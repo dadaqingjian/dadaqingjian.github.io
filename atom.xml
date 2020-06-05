@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiuyeliang.com/"/>
-  <updated>2020-05-06T10:11:03.171Z</updated>
+  <updated>2020-06-05T07:10:23.003Z</updated>
   <id>http://xiuyeliang.com/</id>
   
   <author>
@@ -17,19 +17,50 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>阅读《A Survey on Knowledge Graphs-Representation, Acquisition and Applications》-AAAI2020</title>
-    <link href="http://xiuyeliang.com/2020/05/06/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E7%BB%BC%E8%BF%B0ICLR2020/"/>
-    <id>http://xiuyeliang.com/2020/05/06/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E7%BB%BC%E8%BF%B0ICLR2020/</id>
-    <published>2020-05-06T09:52:57.000Z</published>
-    <updated>2020-05-06T10:11:03.171Z</updated>
+    <title>HEDGE</title>
+    <link href="http://xiuyeliang.com/2020/06/05/HEDGE/"/>
+    <id>http://xiuyeliang.com/2020/06/05/HEDGE/</id>
+    <published>2020-06-05T07:08:10.000Z</published>
+    <updated>2020-06-05T07:10:23.003Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="/2020/05/06/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E7%BB%BC%E8%BF%B0ICLR2020/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E7%BB%BC%E8%BF%B0.png" alt="知识图谱综述"></p>]]></content>
+    <content type="html"><![CDATA[<div class="row">    <embed src="./HEDGE.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;img src=&quot;/2020/05/06/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E7%BB%BC%E8%BF%B0ICLR2020/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E7%BB%BC%E8%BF%
+        
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;./HEDGE.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;application/pdf&quot;&gt;
+	&lt;/div&gt;
+
+
+
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>阅读《A Survey on Knowledge Graphs-Representation, Acquisition and Applications》-AAAI2020</title>
+    <link href="http://xiuyeliang.com/2020/05/06/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E7%BB%BC%E8%BF%B0ICLR2020/"/>
+    <id>http://xiuyeliang.com/2020/05/06/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E7%BB%BC%E8%BF%B0ICLR2020/</id>
+    <published>2020-05-06T09:52:57.000Z</published>
+    <updated>2020-05-08T02:15:56.697Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><p>该综述主要从4个方面对知识图谱相关信息进行总结。</p><ol><li>知识图谱表示-主要是对图中的实体和关系用低维向量表示。</li></ol><p><img src="/2020/05/06/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E7%BB%BC%E8%BF%B0ICLR2020/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E7%BB%BC%E8%BF%B0.png" alt="知识图谱综述"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h2&gt;&lt;p&gt;该综述主要从4个方面对知识图谱相关信息进行总结。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;知识图谱表示-主要是对图中的实体和关系用低维
       
     
     </summary>
@@ -49,9 +80,9 @@
     <link href="http://xiuyeliang.com/2020/05/04/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/"/>
     <id>http://xiuyeliang.com/2020/05/04/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/</id>
     <published>2020-05-04T02:54:35.000Z</published>
-    <updated>2020-05-04T13:22:17.226Z</updated>
+    <updated>2020-05-14T09:49:59.316Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="1-线性回归"><a href="#1-线性回归" class="headerlink" title="1. 线性回归"></a>1. 线性回归</h2><p>线性回归的表达式： $y(x, w)=w_{0}+w_{1} x_{1}+\ldots+w_{n} x_{n}$</p><h2 id="2-逻辑回归"><a href="#2-逻辑回归" class="headerlink" title="2. 逻辑回归"></a>2. 逻辑回归</h2><h3 id="2-1逻辑回归的定义"><a href="#2-1逻辑回归的定义" class="headerlink" title="2.1逻辑回归的定义"></a>2.1逻辑回归的定义</h3><p>线性回归可以预测连续值，但是不能解决分类问题，我们需要根据预测的结果判定其属于正类还是负类。所以逻辑回归就是将线性回归的(−∞,+∞)<br>(−∞,+∞)结果，通过sigmoid函数映射到(0,1)<br>(0,1)之间。<br><img src="/2020/05/04/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E5%87%BD%E6%95%B0%E5%9B%BE.png" alt="逻辑回归函数图"></p><p><strong>为什么使用sigmoid函数？</strong></p><ol><li>可以对(−∞,+∞)结果，映射到(0,1)之间，作为概率。</li><li>$x&lt;0,$ sigmoid$(x)&lt;\frac{1}{2} ; x&gt;0,$ sigmoid $(x)&gt;\frac{1}{2}$ ，可以将1/2作为决策边界。</li><li>数学特性好，求导容易： $g^{\prime}(z)=g(z) \cdot(1-g(z))$</li></ol><p>线性回归决策函数： $h \theta(x)=\theta^{T} x$<br>将其通过sigmoid函数，获得逻辑回归的决策函数： $h_{\theta}(x)=\frac{1}{1+e^{-\theta^{T} x}}$<br>逻辑回归可以写成：<br>$P(y=1 | x ; \theta)=h_{\theta}(x)$<br>$P(y=0 | x ; \theta)=1-h_{\theta}(x)$<br>然后可以写成统一的形式：<br>$p(y | x ; \theta)=\left(h_{\theta}(x)\right)^{y}\left(1-h_{\theta}(x)\right)^{1-y}$</p><h3 id="2-2逻辑回归损失函数"><a href="#2-2逻辑回归损失函数" class="headerlink" title="2.2逻辑回归损失函数"></a>2.2逻辑回归损失函数</h3><p>由最大似然估计原理，我们可以通过m个训练样本值，来估计出值，使得似然函数值（所有样本的似然函数之积）最大：<br>$\begin{aligned} L(\theta) &amp;=p(\vec{y} | X ; \theta) \ &amp;=\prod_{i=1}^{m} p\left(y^{(i)} | x^{(i)} ; \theta\right) \ &amp;=\prod_{i=1}^{m}\left(h_{\theta}\left(x^{(i)}\right)\right)^{y^{(i)}}\left(1-h_{\theta}\left(x^{(i)}\right)\right)^{1-y^{(i)}} \end{aligned}$<br>求log：<br>$\begin{aligned} \ell(\theta) &amp;=\log L(\theta) \ &amp;=\sum_{i=1}^{m} y^{(i)} \log h\left(x^{(i)}\right)+\left(1-y^{(i)}\right) \log \left(1-h\left(x^{(i)}\right)\right) \end{aligned}$<br>取负数，得损失函数：<br>$J(\theta)=\frac{1}{m} \sum_{i=1}^{n} \operatorname{cost}\left(h_{\theta}\left(x_{i}\right), y_{i}\right)=-\frac{1}{m}\left[\sum_{i=1}^{n} y_{i} \log h_{\theta}\left(x_{i}\right)+\left(1-y_{i}\right) \log \left(1-h_{\theta}\left(x_{i}\right)\right)\right]$</p><p>Question: 为什么逻辑回归采用似然函数，而不是平方损失函数？</p><ol><li>最小二乘的损失函数是非凸函数。没有全局最优解。</li></ol><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol><li><a href="https://blog.csdn.net/jiaoyangwm/article/details/81139362" target="_blank" rel="noopener">https://blog.csdn.net/jiaoyangwm/article/details/81139362</a></li><li><a href="https://blog.csdn.net/ddydavie/article/details/82668141" target="_blank" rel="noopener">https://blog.csdn.net/ddydavie/article/details/82668141</a></li></ol>]]></content>
+    <content type="html"><![CDATA[<h2 id="1-线性回归"><a href="#1-线性回归" class="headerlink" title="1. 线性回归"></a>1. 线性回归</h2><p>线性回归的表达式： $y(x, w)=w_{0}+w_{1} x_{1}+\ldots+w_{n} x_{n}$</p><h2 id="2-逻辑回归"><a href="#2-逻辑回归" class="headerlink" title="2. 逻辑回归"></a>2. 逻辑回归</h2><h3 id="2-1逻辑回归的定义"><a href="#2-1逻辑回归的定义" class="headerlink" title="2.1逻辑回归的定义"></a>2.1逻辑回归的定义</h3><p>线性回归可以预测连续值，但是不能解决分类问题，我们需要根据预测的结果判定其属于正类还是负类。所以逻辑回归就是将线性回归的(−∞,+∞)<br>(−∞,+∞)结果，通过sigmoid函数映射到(0,1)<br>(0,1)之间。<br><img src="/2020/05/04/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E5%87%BD%E6%95%B0%E5%9B%BE.png" alt="逻辑回归函数图"></p><p><strong>为什么使用sigmoid函数？</strong></p><ol><li>可以对(−∞,+∞)结果，映射到(0,1)之间，作为概率。</li><li>$x&lt;0,$ sigmoid$(x)&lt;\frac{1}{2} ; x&gt;0,$ sigmoid $(x)&gt;\frac{1}{2}$ ，可以将1/2作为决策边界。</li><li>数学特性好，求导容易： $g^{\prime}(z)=g(z) \cdot(1-g(z))$</li></ol><p>线性回归决策函数： $h \theta(x)=\theta^{T} x$<br>将其通过sigmoid函数，获得逻辑回归的决策函数： $h_{\theta}(x)=\frac{1}{1+e^{-\theta^{T} x}}$<br>逻辑回归可以写成：<br>$P(y=1 | x ; \theta)=h_{\theta}(x)$<br>$P(y=0 | x ; \theta)=1-h_{\theta}(x)$<br>然后可以写成统一的形式：<br>$p(y | x ; \theta)=\left(h_{\theta}(x)\right)^{y}\left(1-h_{\theta}(x)\right)^{1-y}$</p><h3 id="2-2逻辑回归损失函数"><a href="#2-2逻辑回归损失函数" class="headerlink" title="2.2逻辑回归损失函数"></a>2.2逻辑回归损失函数</h3><p>由最大似然估计原理，我们可以通过m个训练样本值，来估计出值，使得似然函数值（所有样本的似然函数之积）最大：<br>$\begin{aligned} L(\theta) &amp;=p(\vec{y} | X ; \theta) \ &amp;=\prod_{i=1}^{m} p\left(y^{(i)} | x^{(i)} ; \theta\right) \ &amp;=\prod_{i=1}^{m}\left(h_{\theta}\left(x^{(i)}\right)\right)^{y^{(i)}}\left(1-h_{\theta}\left(x^{(i)}\right)\right)^{1-y^{(i)}} \end{aligned}$<br>求log：<br>$\begin{aligned} \ell(\theta) &amp;=\log L(\theta) \ &amp;=\sum_{i=1}^{m} y^{(i)} \log h\left(x^{(i)}\right)+\left(1-y^{(i)}\right) \log \left(1-h\left(x^{(i)}\right)\right) \end{aligned}$<br>取负数，得损失函数：<br>$J(\theta)=\frac{1}{m} \sum_{i=1}^{n} \operatorname{cost}\left(h_{\theta}\left(x_{i}\right), y_{i}\right)=-\frac{1}{m}\left[\sum_{i=1}^{n} y_{i} \log h_{\theta}\left(x_{i}\right)+\left(1-y_{i}\right) \log \left(1-h_{\theta}\left(x_{i}\right)\right)\right]$</p><p>Question: 为什么逻辑回归采用似然函数，而不是平方损失函数？</p><ol><li>最小二乘的损失函数是非凸函数。没有全局最优解。</li></ol><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol><li><a href="https://blog.csdn.net/jiaoyangwm/article/details/81139362" target="_blank" rel="noopener">https://blog.csdn.net/jiaoyangwm/article/details/81139362</a></li><li><a href="https://blog.csdn.net/ddydavie/article/details/82668141" target="_blank" rel="noopener">https://blog.csdn.net/ddydavie/article/details/82668141</a></li><li><a href="https://blog.csdn.net/u012421852/article/details/79575720" target="_blank" rel="noopener">https://blog.csdn.net/u012421852/article/details/79575720</a></li></ol>]]></content>
     
     <summary type="html">
     
