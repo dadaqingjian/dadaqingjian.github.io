@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiuyeliang.com/"/>
-  <updated>2020-06-05T07:13:18.094Z</updated>
+  <updated>2020-06-12T14:38:38.831Z</updated>
   <id>http://xiuyeliang.com/</id>
   
   <author>
@@ -15,6 +15,21 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>label_word_attention</title>
+    <link href="http://xiuyeliang.com/2020/06/12/label-word-attention/"/>
+    <id>http://xiuyeliang.com/2020/06/12/label-word-attention/</id>
+    <published>2020-06-12T14:38:38.000Z</published>
+    <updated>2020-06-12T14:38:38.831Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>HEDGE</title>
